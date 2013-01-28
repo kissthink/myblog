@@ -192,10 +192,19 @@ INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'site'
+THEME = 'mytheme'
 
 # date format used to display post dates. (str used by datetime.datetime.strftime)
 DATE_FORMAT = '%Y-%m-%d %H:%M'
+
+# FAVICONS contains (name, file, size) tuples.
+# Used for create favicon link like this: 
+# <link rel="${name}" href="${file}" sizes="${size}"/>
+# about favicons, see: http://www.netmagazine.com/features/create-perfect-favicon
+FAVICONS = {
+    ("icon", "/favicon.ico", "16x16"),
+    ("icon", "/icon_128x128.png", "128x128"),
+}
 
 # Show only teasers in the index pages? Defaults to False.
 # INDEX_TEASERS = False
@@ -277,6 +286,7 @@ GLOBAL_CONTEXT = {
     'blog_url': BLOG_URL,
     'blog_desc': BLOG_DESCRIPTION,
     'date_format': DATE_FORMAT,
+    'favicons': FAVICONS,
     'translations': TRANSLATIONS,
     'license': LICENSE,
     'search_form': SEARCH_FORM,
