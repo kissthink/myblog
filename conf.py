@@ -81,13 +81,13 @@ post_compilers = {
 # in the default language will be shown instead.
 
 # What is the default language?
-DEFAULT_LANG = "en"
+DEFAULT_LANG = "zh_cn"
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    "en": "",
+    "zh_cn": "",
     #"gr": "./gr",
     #"de": "./de",
     #"fr": "./fr",
@@ -192,7 +192,7 @@ INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'mytheme'
+THEME = 'site'
 
 # date format used to display post dates. (str used by datetime.datetime.strftime)
 DATE_FORMAT = '%Y-%m-%d %H:%M'
@@ -229,6 +229,8 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # If you want to disable comments, set it to False.
 DISQUS_FORUM = "nikolademo"
 
+# Create index.html for story folders?
+# STORY_INDEX = False
 # Enable comments on story pages?
 # COMMENTS_IN_STORIES = False
 # Enable comments on picture gallery pages?
@@ -277,6 +279,21 @@ SEARCH_FORM = ""
 ANALYTICS = """
     """
 
+# The possibility to extract metadata from the filename by using a
+# regular expression.
+# To make it work you need to name parts of your regular expression.
+# The following names will be used to extract metadata:
+# - title
+# - slug
+# - date
+# - tags
+# - link
+# - description
+#
+# An example re is the following:
+# '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)-(?P<title>.*)\.md'
+FILE_METADATA_REGEXP = None
+
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 GLOBAL_CONTEXT = {
@@ -286,7 +303,6 @@ GLOBAL_CONTEXT = {
     'blog_url': BLOG_URL,
     'blog_desc': BLOG_DESCRIPTION,
     'date_format': DATE_FORMAT,
-    'favicons': FAVICONS,
     'translations': TRANSLATIONS,
     'license': LICENSE,
     'search_form': SEARCH_FORM,
