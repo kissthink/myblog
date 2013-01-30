@@ -81,13 +81,13 @@ post_compilers = {
 # in the default language will be shown instead.
 
 # What is the default language?
-DEFAULT_LANG = "zh_cn"
+DEFAULT_LANG = "zh-cn"
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
-    "zh_cn": "",
+    "zh-cn": "",
     #"gr": "./gr",
     #"de": "./de",
     #"fr": "./fr",
@@ -192,7 +192,7 @@ INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
 INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'site'
+THEME = 'my_theme'
 
 # date format used to display post dates. (str used by datetime.datetime.strftime)
 DATE_FORMAT = '%Y-%m-%d %H:%M'
