@@ -238,7 +238,7 @@ DISQUS_FORUM = "nikolademo"
 
 # Enable Addthis social buttons?
 # Defaults to true
-# ADD_THIS_BUTTONS = True
+ADD_THIS_BUTTONS = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -289,6 +289,36 @@ ANALYTICS = """
   })();
 </script>
 <!-- End of Google Analytics -->
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=0&amp;pos=right&amp;uid=6600665" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<script id="bdlike_shell"></script>
+<script>
+var bdShare_config = {
+    "type":"large",
+    "color":"blue",
+    "uid":"6600665",
+    "likeText":"赞一个试试看",
+    "likedText":"已顶_(:з」∠)_"
+};
+document.getElementById("bdlike_shell").src="http://bdimg.share.baidu.com/static/js/like_shell.js?t=" + Math.ceil(new Date()/3600000);
+</script>
+<script id="bdimgshare_shell"></script>
+<script>
+var bdShare_config_imgshare = {
+    "type":"list"
+    ,"size":"big"
+    ,"pos":"bottom"
+    ,"color":"black"
+    ,"list":["qzone","tsina","tqq","tqf","renren","douban","fbook","twi","linkedin","mail","mshare"]
+    ,"uid":"6600665"
+};
+document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/static/js/imgshare_shell.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
     """
 
 # The possibility to extract metadata from the filename by using a
