@@ -319,6 +319,19 @@ var bdShare_config_imgshare = {
 document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/static/js/imgshare_shell.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
 <!-- Baidu Button END -->
+<!-- Duoshuo Comment BEGIN -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhaojunmeng"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- Duoshuo Comment END -->
     """
 
 # The possibility to extract metadata from the filename by using a
