@@ -372,6 +372,7 @@ GLOBAL_CONTEXT = {
             ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), '归档'),
             ('/categories/index.html', '分类'),
             ('/galleries/jiafeimao2012/index.html', '画廊'),
+            ('/stories/about-authors.html', '关于作者'),
             ),
         }
     }
