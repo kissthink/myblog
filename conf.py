@@ -11,10 +11,10 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "孟昭俊"
-BLOG_TITLE = "孟昭俊的博客"
+BLOG_TITLE = "下顿吃啥"
 BLOG_URL = "http://zhaojunmeng.github.com"
 BLOG_EMAIL = "zhaojun.meng@gmail.com"
-BLOG_DESCRIPTION = "我就随便一说"
+BLOG_DESCRIPTION = "下顿吃啥好呢？让我们一起来觅食吧！"
 
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
@@ -369,11 +369,9 @@ GLOBAL_CONTEXT = {
     # You should provide a key-value pair for each used language.
     'sidebar_links': {
         DEFAULT_LANG: (
-            ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archives'),
-            ('/categories/index.html', 'Tags'),
-            ('/stories/about-nikola.html', 'About Nikola'),
-            ('/stories/handbook.html', 'The Nikola Handbook'),
-            ('http://nikola.ralsina.com.ar', 'Powered by Nikola!'),
+            ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), '归档'),
+            ('/categories/index.html', '分类'),
+            ('/galleries/jiafeimao2012/index.html', '画廊'),
             ),
         }
     }
