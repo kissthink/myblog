@@ -40,7 +40,9 @@ BLOG_DESCRIPTION = "下顿吃啥好呢？让我们一起来觅食吧！"
 
 post_pages = (
     ("posts/*.txt", "posts", "post.tmpl", True),
+    ("posts/*.md", "posts", "post.tmpl", True),
     ("stories/*.txt", "stories", "story.tmpl", False),
+    ("stories/*.md", "stories", "story.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
