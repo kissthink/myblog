@@ -11,8 +11,8 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "孟昭俊"
-BLOG_TITLE = "下顿吃啥"
-BLOG_URL = "http://zhaojunmeng.github.com"
+BLOG_TITLE = "优格猫"
+BLOG_URL = "http://yogurtcat.com"
 BLOG_EMAIL = "zhaojun.meng@gmail.com"
 BLOG_DESCRIPTION = "下顿吃啥好呢？让我们一起来觅食吧！"
 
@@ -51,10 +51,10 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
-        ('/archive.html', '归档'),
-        ('/categories/index.html', '分类'),
-        ('/galleries/jiafeimao2012/index.html', '画廊'),
-        ('/stories/about-authors.html', '关于作者'),
+        ('/archive.html', '文章归档'),
+        ('/categories/index.html', '文章分类'),
+        ('/galleries/jiafeimao2012/index.html', '加菲猫的画'),
+        ('/stories/about-authors.html', '作者们'),
     ),
 }
 
