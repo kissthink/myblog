@@ -54,7 +54,7 @@ SIDEBAR_LINKS = {
         ('/archive.html', '文章归档'),
         ('/categories/index.html', '文章分类'),
         ('/galleries/jiafeimao2012/index.html', '加菲猫的画'),
-        ('/stories/about-authors.html', '作者们'),
+        ('/stories/about-authors.html', '联系作者'),
     ),
 }
 
