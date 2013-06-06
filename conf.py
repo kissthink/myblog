@@ -1,7 +1,6 @@
 
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import os
 import time
 
 ##############################################
@@ -12,7 +11,12 @@ import time
 # Data about this site
 BLOG_AUTHOR = "孟昭俊"
 BLOG_TITLE = "优格猫"
+# This is the main URL for your site. It will be used
+# in a prominent link
 SITE_URL = "http://yogurtcat.com"
+# This is the URL where nikola's output will be deployed.
+# If not set, defaults to SITE_URL
+# BASE_URL = "http://nikola.ralsina.com.ar"
 BLOG_EMAIL = "zhaojun.meng@gmail.com"
 BLOG_DESCRIPTION = "下顿吃啥好呢？让我们一起来觅食吧！"
 
@@ -141,11 +145,16 @@ post_compilers = {
 
 # Final location is output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # INDEX_PATH = ""
+
+# Create per-month archives instead of per-year
+# CREATE_MONTHLY_ARCHIVE = False
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
+# output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / index.html
 # ARCHIVE_PATH = ""
 # ARCHIVE_FILENAME = "archive.html"
+
 # Final locations are:
 # output / TRANSLATION[lang] / RSS_PATH / rss.xml
 # RSS_PATH = ""
@@ -223,25 +232,37 @@ USE_FILENAME_AS_TITLE = True
 
 # Data about post-per-page indexes
 # INDEXES_TITLE = ""  # If this is empty, the default is BLOG_TITLE
-# INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d' translated
+# INDEXES_PAGES = ""  # If this is empty, the default is 'old posts page %d'
+# translated
 
-# Name of the theme to use. Themes are located in themes/theme_name
+# Name of the theme to use.
 THEME = 'my_theme'
 #THEME = 'site-reveal'	# 
 
+# Color scheme to be used for code blocks. If your theme provides
+# "assets/css/code.css" this is ignored.
+# Can be any of autumn borland bw colorful default emacs friendly fruity manni
+# monokai murphy native pastie perldoc rrt tango trac vim vs
+# CODE_COLOR_SCHEME = default
+
 # If you use 'site-reveal' theme you can select several subthemes
-# THEME_REVEAL_CONGIF_SUBTHEME = 'sky' # You can also use: beige/serif/simple/night/default
+# THEME_REVEAL_CONGIF_SUBTHEME = 'sky'
+# You can also use: beige/serif/simple/night/default
 
-# Again, if you use 'site-reveal' theme you can select several transitions between the slides
-# THEME_REVEAL_CONGIF_TRANSITION = 'cube' # You can also use: page/concave/linear/none/default
+# Again, if you use 'site-reveal' theme you can select several transitions
+# between the slides
+# THEME_REVEAL_CONGIF_TRANSITION = 'cube'
+# You can also use: page/concave/linear/none/default
 
-# date format used to display post dates. (str used by datetime.datetime.strftime)
+# date format used to display post dates.
+# (str used by datetime.datetime.strftime)
 # DATE_FORMAT = '%Y-%m-%d %H:%M'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used for create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# about favicons, see: http://www.netmagazine.com/features/create-perfect-favicon
+# For creating favicons, take a look at:
+# http://www.netmagazine.com/features/create-perfect-favicon
 FAVICONS = {
     ("icon", "/favicon.ico", "16x16"),
     ("icon", "/icon_128x128.png", "128x128"),
@@ -261,7 +282,7 @@ INDEX_TEASERS = True
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
-CONTENT_FOOTER = 'Contents &copy; {date} <a href="mailto:{email}">{author}</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)
@@ -278,6 +299,34 @@ DISQUS_FORUM = "nikolademo"
 # COMMENTS_IN_STORIES = False
 # Enable comments on picture gallery pages?
 # COMMENTS_IN_GALLERIES = False
+
+# What file should be used for directory indexes?
+# Defaults to index.html
+# Common other alternatives: default.html for IIS, index.php
+# INDEX_FILE = "index.html"
+
+# If a link ends in /index.html,  drop the index.html part.
+# http://mysite/foo/bar/index.html => http://mysite/foo/bar/
+# (Uses the INDEX_FILE setting, so if that is, say, default.html,
+# it will instead /foo/default.html => /foo)
+# (Note: This was briefly STRIP_INDEX_HTML in v 5.4.3 and 5.4.4)
+# Default = False
+# STRIP_INDEXES = False
+
+# Should the sitemap list directories which only include other directories
+# and no files.
+# Default to True
+# If this is False
+# e.g. /2012 includes only /01, /02, /03, /04, ...: don't add it to the sitemap
+# if /2012 includes any files (including index.html)... add it to the sitemap
+# SITEMAP_INCLUDE_FILELESS_DIRS = True
+
+# Instead of putting files in <slug>.html, put them in
+# <slug>/index.html. Also enables STRIP_INDEXES
+# This can be disabled on a per-page/post basis by adding
+#    .. pretty_url: False
+# to the metadata
+# PRETTY_URLS = False
 
 # Do you want a add a Mathjax config file?
 # MATHJAX_CONFIG = ""
@@ -297,6 +346,11 @@ DISQUS_FORUM = "nikolademo"
 #});
 #</script>
 #"""
+
+# What MarkDown extensions to enable?
+# You will also get gist, nikola and podcast because those are
+# done in the code, hope you don't mind ;-)
+# MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']
 
 # Enable Addthis social buttons?
 # Defaults to true
@@ -320,8 +374,8 @@ ADD_THIS_BUTTONS = False
 # Default is no search form.
 # SEARCH_FORM = ""
 #
-# This search form works for any site and looks good in the "site" theme where it
-# appears on the navigation bar
+# This search form works for any site and looks good in the "site" theme where
+# it appears on the navigation bar
 #SEARCH_FORM = """
 #<!-- Custom search -->
 #<form method="get" id="search" action="http://duckduckgo.com/"
@@ -335,7 +389,7 @@ ADD_THIS_BUTTONS = False
 #<input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
 #</form>
 #<!-- End of custom search -->
-#""" % BLOG_URL
+#""" % SITE_URL
 #
 # Also, there is a local search plugin you can use.
 
@@ -346,6 +400,9 @@ ADD_THIS_BUTTONS = False
 # external resources.
 USE_CDN = False
 
+# Extra things you want in the pages HEAD tag. This will be added right
+# before </HEAD>
+# EXTRA_HEAD_DATA = ""
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 ANALYTICS = """
@@ -427,7 +484,8 @@ document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/st
 #
 # IMPORTANT:
 # Please note, that you need to opt-in for using Twitter Cards!
-# To do this please visit https://dev.twitter.com/form/participate-twitter-cards
+# To do this please visit
+# https://dev.twitter.com/form/participate-twitter-cards
 #
 # Uncomment and modify to following lines to match your accounts.
 # Specifying the id for either 'site' or 'creator' will be preferred
@@ -436,13 +494,15 @@ document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/st
 # TWITTER_CARD = {
 #     # 'use_twitter_cards': True,  # enable Twitter Cards / Open Graph
 #     # 'site': '@website',  # twitter nick for the website
-#     # 'site:id': 123456,  # Same as site, but the website's Twitter user ID instead.
+#     # 'site:id': 123456,  # Same as site, but the website's Twitter user ID
+#                           # instead.
 #     # 'creator': '@username',  # Username for the content creator / author.
 #     # 'creator:id': 654321,  # Same as creator, but the Twitter user's ID.
 # }
 
 
-# If you want to use formatted post time in W3C-DTF Format(ex. 2012-03-30T23:00:00+02:00),
+# If you want to use formatted post time in W3C-DTF Format
+# (ex. 2012-03-30T23:00:00+02:00),
 # set timzone if you want a localized posted date.
 #
 # TIMEZONE = 'Europe/Zurich'
@@ -452,6 +512,20 @@ document.getElementById("bdimgshare_shell").src="http://bdimg.share.baidu.com/st
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]
+
+# Experimental plugins - use at your own risk.
+# They probably need some manual adjustments - please see their respective
+# readme.
+# ENABLED_EXTRAS = [
+#     'planetoid',
+#     'ipynb',
+#     'local_search',
+#     'mustache',
+# ]
+
+# List of regular expressions, links matching them will always be considered
+# valid by "nikola check -l"
+# LINK_CHECK_WHITELIST = []
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
